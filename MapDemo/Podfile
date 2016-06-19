@@ -1,0 +1,20 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+use_frameworks!
+
+target 'MapDemo' do
+  pod 'Mapbox-iOS-SDK', '~> 3.2.3'
+  pod 'RealmSwift'
+  pod 'Siesta', '>=1.0-beta.7'
+  pod 'Siesta/Alamofire'
+end
+
+target 'MapDemoTests' do
+
+end
+
+target 'MapDemoUITests' do
+
+end
+
