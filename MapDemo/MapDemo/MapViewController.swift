@@ -8,6 +8,7 @@
 
 import UIKit
 import Mapbox
+import ObjectMapper
     
 class MapViewController: UIViewController, MGLMapViewDelegate {
 
@@ -22,11 +23,41 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         adjustButtons()
         setupMap()
         mapView.delegate = self
+        
+        // Uncomment below to make base json models
+        createSampleAnnotationModels()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    func createSampleAnnotationModels() {
+        
+        let annotation:BaseAnnotationModel?
+        
+        do {
+            
+            annotation = try BaseAnnotationModel.init(coordinates: (x: 37.3302, y: -122.0342),
+                                                  title: "standard annotation",
+                                                  subTitle: "subtitle")
+            
+            let annotationJSON = Mapper().toJSONString(annotation!, prettyPrint: false)
+            
+            print(annotationJSON)
+            
+            
+        } catch {
+            print("\(error)")
+        }
+    
+        
+        
+        
+        
+        
     }
     
     func setupMap() {
@@ -64,7 +95,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
 extension MapViewController {
     
     func mapViewDidFinishLoadingMap(mapView: MGLMapView) {
-        let b  = ""
+       // let b  = ""
     }
 }
 

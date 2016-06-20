@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
+		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -34,15 +34,10 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Siesta.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0F7A4C28C60D61498E3A334A2ABB1C57</key>
+		<key>25400EAEB96F7CEFF3FEB214925585E8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,27 +47,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>67921B785B28849AC5DFF79B02AE3730</key>
+		<key>47E92CFD768F2D5628EF9C3B78C2A7C5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>B3057D5C67EA4A057B353F7A26264879</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>97BE2B000E818D4BC27638D64B03066D</key>
+		<key>D5D6200D4BE741574DBD4FB768A6F55B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>DF64EF2199A912D800891176F16BAE00</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F6A7FE6E85A72B13AAFA0F47621DE58A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -8,16 +8,24 @@
 
 import UIKit
 import Mapbox
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+   
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        do {
+            _ = try Realm()
+        } catch let error as NSError {
+            // handle error
+            print(error.description)
+        }
         return true
     }
 

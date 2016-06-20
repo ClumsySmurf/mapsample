@@ -6,8 +6,7 @@ use_frameworks!
 target 'MapDemo' do
   pod 'Mapbox-iOS-SDK', '~> 3.2.3'
   pod 'RealmSwift'
-  pod 'Siesta', '>=1.0-beta.7'
-  pod 'Siesta/Alamofire'
+  pod 'ObjectMapper', '~> 1.3'
 end
 
 target 'MapDemoTests' do
