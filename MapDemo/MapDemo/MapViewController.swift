@@ -95,7 +95,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
 extension MapViewController {
     
     func mapViewDidFinishLoadingMap(mapView: MGLMapView) {
-       // let b  = ""
+
     }
 }
 
