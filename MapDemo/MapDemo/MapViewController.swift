@@ -29,14 +29,16 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         setupMap()
         mapView.delegate = self
         
+
+        
         // Uncomment below to make base json models
         //createSampleAnnotationModels()
         
-        // Uncomment line below to load annotations into realm
+        // 1) Uncomment lines below to load default items into realm on background
         //loadAnnotationsIntoRealm()
         
+        // 2) Comment line above, and uncomment line below to start playing around
         loadRealmObjectAnnotations()
-        
         mapView.addAnnotations(annotationResults!)
     }
 
@@ -144,6 +146,28 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     }
 
     @IBAction func dropPinTouchUpInsideAction(sender: AnyObject) {
+        
+        do {
+            
+            let coords = mapView.camera.centerCoordinate
+            
+            let realm = try Realm();
+            
+            
+            let annotation = try ImageAnnotationModel(imageName: "pin-poi-fishing", coordinates: (x: coords.latitude, y: coords.longitude), identifier: "Dropped Pin")
+            
+            try realm.write({
+                realm.add(annotation)
+            })
+            
+            
+            annotationResults?.append(annotation)
+            
+            mapView.addAnnotation(annotation)
+        }
+        catch {
+            print("Error adding \(error)")
+        }
     }
     
 }

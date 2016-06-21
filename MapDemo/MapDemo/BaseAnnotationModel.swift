@@ -17,7 +17,7 @@ class BaseAnnotationModel : Object, Mappable, MGLAnnotation {
     dynamic var y: Double = 0
     dynamic var title: String?
     dynamic var subTitle: String?
-    dynamic var id = 0
+    dynamic var id = NSUUID().UUIDString
     
 
     var coordinate: CLLocationCoordinate2D {
