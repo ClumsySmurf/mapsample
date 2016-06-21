@@ -17,6 +17,8 @@
 		B6753E961D15C52D00C7FD29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6753E941D15C52D00C7FD29 /* LaunchScreen.storyboard */; };
 		B6753EA11D15C52D00C7FD29 /* MapDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6753EA01D15C52D00C7FD29 /* MapDemoTests.swift */; };
 		B6753EAC1D15C52D00C7FD29 /* MapDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6753EAB1D15C52D00C7FD29 /* MapDemoUITests.swift */; };
+		B6E8A8421D18C3FF009F97C4 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B6E8A8411D18C3FF009F97C4 /* data.json */; };
+		B6E8A8451D18F1B3009F97C4 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E8A8441D18F1B3009F97C4 /* Realm.swift */; };
 		DD44611501E4FD797AB0922B /* Pods_MapDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032EC735E5679C9D50CE1CF0 /* Pods_MapDemoUITests.framework */; };
 		DF2FB4A98D006CB596969D51 /* Pods_MapDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02F466BFB9140DC1AFCF3B4 /* Pods_MapDemo.framework */; };
 		E7E9F3F32388ECD4D61EABE5 /* Pods_MapDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA181B38B83F86EF9F58E12 /* Pods_MapDemoTests.framework */; };
@@ -63,6 +65,8 @@
 		B6753EA71D15C52D00C7FD29 /* MapDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6753EAB1D15C52D00C7FD29 /* MapDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDemoUITests.swift; sourceTree = "<group>"; };
 		B6753EAD1D15C52D00C7FD29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6E8A8411D18C3FF009F97C4 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		B6E8A8441D18F1B3009F97C4 /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		BA6CE1766FCCF957B115E4EA /* Pods-MapDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemo/Pods-MapDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C63865481CB7AD3E863A9B5D /* Pods-MapDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapDemoTests/Pods-MapDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +161,8 @@
 		B6753E8A1D15C52C00C7FD29 /* MapDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B6E8A8431D18F1AB009F97C4 /* Extensions */,
+				B6E8A8401D18C3F1009F97C4 /* Resources */,
 				B604D69C1D174D5200659691 /* Service */,
 				B6753EC01D16FFF800C7FD29 /* UI */,
 				B6753EB91D15C5A500C7FD29 /* Model */,
@@ -210,6 +216,22 @@
 				B6753EBF1D16FFF300C7FD29 /* ViewControllers */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		B6E8A8401D18C3F1009F97C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B6E8A8411D18C3FF009F97C4 /* data.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B6E8A8431D18F1AB009F97C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B6E8A8441D18F1B3009F97C4 /* Realm.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		DEE89D29F0CDDBED91EC09D2 /* Frameworks */ = {
@@ -338,6 +360,7 @@
 				B6753E961D15C52D00C7FD29 /* LaunchScreen.storyboard in Resources */,
 				B6753E931D15C52D00C7FD29 /* Assets.xcassets in Resources */,
 				B6753E911D15C52D00C7FD29 /* Main.storyboard in Resources */,
+				B6E8A8421D18C3FF009F97C4 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +513,7 @@
 				B604D6961D17179300659691 /* BaseAnnotationModel.swift in Sources */,
 				B6753E8C1D15C52D00C7FD29 /* AppDelegate.swift in Sources */,
 				B604D6A01D174E1400659691 /* MapService.swift in Sources */,
+				B6E8A8451D18F1B3009F97C4 /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

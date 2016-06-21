@@ -9,6 +9,7 @@
 import UIKit
 import Mapbox
 import ObjectMapper
+import RealmSwift
     
 class MapViewController: UIViewController, MGLMapViewDelegate {
 
@@ -18,6 +19,10 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var findLocationBttn: UIButton!
     
     
+    var jsonData:AnyObject? = nil
+    
+    var annotationResults:Array<MGLAnnotation>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         adjustButtons()
@@ -25,7 +30,14 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         mapView.delegate = self
         
         // Uncomment below to make base json models
-        createSampleAnnotationModels()
+        //createSampleAnnotationModels()
+        
+        // Uncomment line below to load annotations into realm
+        //loadAnnotationsIntoRealm()
+        
+        loadRealmObjectAnnotations()
+        
+        mapView.addAnnotations(annotationResults!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,12 +64,56 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         } catch {
             print("\(error)")
         }
+    }
     
+    func loadAnnotationsIntoRealm() {
+        self.jsonData = MapService.getAnnotations()
         
+        if (self.jsonData != nil) {
+            
+            if let annotations = Mapper<BaseAnnotationModel>().mapArray(self.jsonData) {
+                
+                saveRealmObjects(annotations)
+                
+            }
+            
+        }
         
+    }
+    
+    func saveRealmObjects(annotations:[Object]) {
         
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) { 
+            
+            do {
+                let realm = try Realm();
+                
+                realm.beginWrite()
+                
+               
+                for a in annotations {
+                     realm.add(a, update: true)
+                }
+                
+                try realm.commitWrite()
+            }
+            catch {
+                print("Realm Error: \(error)")
+            }
+        }
+    }
+    
+    func loadRealmObjectAnnotations() {
         
-        
+        do {
+            let realm = try Realm()
+            
+            annotationResults = realm.filter(parentType: BaseAnnotationModel.self, subclasses: [ImageAnnotationModel.self], predicate: nil)
+            
+            
+        } catch {
+            print("error \(error)")
+        }
     }
     
     func setupMap() {
@@ -95,7 +151,36 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
 extension MapViewController {
     
     func mapViewDidFinishLoadingMap(mapView: MGLMapView) {
-       // let b  = ""
+       
     }
+    
+    func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage? {
+       
+        
+        if (annotation is ImageAnnotationModel) {
+            
+            guard let imageAnnotation = annotation as? ImageAnnotationModel else {
+                return nil
+            }
+            
+            var annotationImage = mapView.dequeueReusableAnnotationImageWithIdentifier(imageAnnotation.imageName!)
+            
+            
+            var image = UIImage(named:imageAnnotation.imageName!)!
+                
+                image = image.imageWithAlignmentRectInsets(UIEdgeInsetsMake(0, 0, image.size.height/2, 0))
+                
+                annotationImage = MGLAnnotationImage(image: image, reuseIdentifier: imageAnnotation.imageName!)
+        
+            return annotationImage
+            
+        }
+        
+        return nil
+
+    }
+        
+
+    
 }
 

@@ -20,12 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { migration, oldSchemaVersion in
+                if (oldSchemaVersion < 1) {
+                   
+                }
+        })
+        
+        Realm.Configuration.defaultConfiguration = config
+        
         do {
             _ = try Realm()
-        } catch let error as NSError {
-            // handle error
-            print(error.description)
         }
+        catch {
+            print("realm error \(error)")
+        }
+        
         return true
     }
 

@@ -8,16 +8,23 @@
 
 import RealmSwift
 import ObjectMapper
+import Mapbox
 
 
-class BaseAnnotationModel : Object, Mappable{
+class BaseAnnotationModel : Object, Mappable, MGLAnnotation {
     
     dynamic var x: Double = 0
     dynamic var y: Double = 0
     dynamic var title: String?
     dynamic var subTitle: String?
+    dynamic var id = 0
     
 
+    var coordinate: CLLocationCoordinate2D {
+        get {
+            return CLLocationCoordinate2DMake(x, y)
+        }
+    }
     
     // Error Handling
     enum InputError: ErrorType {
@@ -29,11 +36,27 @@ class BaseAnnotationModel : Object, Mappable{
         self.init();
     }
     
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    class func objectForMapping(map: Map) -> Mappable? {
+        
+        if let _:String = map["image"].value() {
+            return ImageAnnotationModel(map)
+        }
+        
+        return BaseAnnotationModel(map)
+    }
+    
+    
     func mapping(map: Map) {
         x <- map["x"]
         y <- map["y"]
-        title! <- map["title"]
+        title <- map["title"]
         subTitle <- map["subTitle"]
+        id <- map["id"]
     }
     
     convenience init(coordinates: (x:Double, y:Double),
@@ -44,6 +67,7 @@ class BaseAnnotationModel : Object, Mappable{
         guard coordinates.x != 0 && coordinates.y != 0 else {
             throw InputError.InvalidCoordinates
         }
+        
 
         self.x = coordinates.x
         self.y = coordinates.y
@@ -64,6 +88,5 @@ class BaseAnnotationModel : Object, Mappable{
                       title: nil,
                       subTitle: nil)
     }
-
     
 }

@@ -8,36 +8,49 @@
 
 import UIKit
 import ObjectMapper
+import Mapbox
 
 
 class ImageAnnotationModel: BaseAnnotationModel {
     
-    var imageName: String?
+    dynamic var imageName: String?
     
     enum InputError: ErrorType {
         case InvalidImage
     }
     
+    
+
     required convenience init?(_ map : Map) {
-        self.init(map)
+        self.init();
     }
     
     override func mapping(map: Map) {
         super.mapping(map)
-        imageName! <- map["imageName"]
+        imageName <- map["image"]
     }
     
-
+  
     convenience init(imageName: String?, coordinates: (x:Double, y:Double), title: String?, subTitle: String?) throws {
         
+        
+        self.init()
         
         guard imageName != nil else {
             throw InputError.InvalidImage
         }
         
-        try self.init(coordinates: coordinates,
-                       title: title,
-                       subTitle: subTitle)
+        guard coordinates.x != 0 && coordinates.y != 0 else {
+            throw InputError.InvalidCoordinates
+        }
+        
+        
+        self.x = coordinates.x
+        self.y = coordinates.y
+        self.title = title
+        self.subTitle = subTitle
+        
+       
         
         self.imageName = imageName
     }

@@ -1,0 +1,118 @@
+ [
+  {
+  "title": "standard annotation",
+  "x": 37.3302,
+  "y": -122.0342,
+  "id": 1,
+  "subTitle": "subtitle"
+  },
+  {
+  "title": "standard annotation",
+  "x": 36.3302,
+  "y": -122.0342,
+  "id": 2,
+  "subTitle": "subtitle"
+  },
+  {
+  "title": "standard annotation",
+  "x": 35.3302,
+  "y": -122.0342,
+  "id": 3,
+  "subTitle": "subtitle"
+  },
+  {
+  "title": "standard annotation",
+  "x": 38.3302,
+  "y": -123.0342,
+  "id": 4,
+  "subTitle": "subtitle"
+  },
+  {
+  "title": "standard annotation",
+  "x": 37.5302,
+  "y": -125.0342,
+  "id": 5,
+  "subTitle": "subtitle",
+  "image": "pin-custom-fishing"
+  },
+  {
+  "title": "standard annotation",
+  "x": 37.3302,
+  "y": -122.3342,
+  "subTitle": "subtitle",
+  "id": 6,
+  "image": "pin-custom-fishing"
+  },
+  {
+  "title": "standard annotation",
+  "x": 37.3302,
+  "y": -122.7342,
+  "subTitle": "subtitle",
+  "id": 7,
+  "image": "pin-custom-hunting"
+  },
+  {
+  "title": "standard annotation",
+  "x": 36.3302,
+  "y": -120.0342,
+  "subTitle": "subtitle",
+  "id": 8,
+  "image": "pin-custom-fishing"
+  },
+  {
+  "title": "standard annotation",
+  "x": 32.3302,
+  "y": -123.0342,
+  "subTitle": "subtitle",
+  "id": 9,
+  "image": "pin-custom-hunting"
+  },
+  {
+  "title": "standard annotation",
+  "x": 32.3302,
+  "y": -129.0342,
+  "subTitle": "subtitle",
+  "id": 10,
+  "image": "pin-custom-hunting"
+  },
+  {
+  "title": "standard annotation",
+  "x": 34.3302,
+  "y": -125.0342,
+  "subTitle": "subtitle",
+  "id": 11,
+  "image": "pin-custom-hunting"
+  },
+  {
+  "title": "standard annotation",
+  "x": 35.3302,
+  "y": -124.0342,
+  "subTitle": "subtitle",
+  "id": 12,
+  "image": "pin-custom-hunting"
+  },
+  {
+  "title": "standard annotation",
+  "x": 32.9302,
+  "y": -121.0342,
+  "subTitle": "subtitle",
+  "id": 13,
+  "image": "pin-custom-hunting"
+  },
+  {
+  "title": "standard annotation",
+  "x": 36.3302,
+  "y": -125.0342,
+  "subTitle": "subtitle",
+  "id": 14,
+  "image": "pin-custom-hunting"
+  },
+  {
+  "title": "standard annotation",
+  "x": 37.3302,
+  "y": -120.0342,
+  "subTitle": "subtitle",
+  "id": 15,
+  "image": "pin-custom-hunting"
+  }
+  ]
