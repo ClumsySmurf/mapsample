@@ -173,10 +173,7 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
 }
 
 extension MapViewController {
-    
-    func mapViewDidFinishLoadingMap(mapView: MGLMapView) {
-       
-    }
+
     
     func mapView(mapView: MGLMapView, imageForAnnotation annotation: MGLAnnotation) -> MGLAnnotationImage? {
        
