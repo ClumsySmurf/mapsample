@@ -89,4 +89,13 @@ class BaseAnnotationModel : Object, Mappable, MGLAnnotation {
                       subTitle: nil)
     }
     
+    
+    override func isEqual(object: AnyObject?) -> Bool {
+        
+        if let rhs = object as? BaseAnnotationModel {
+            return id == rhs.id
+        }
+        
+        return false
+    }
 }

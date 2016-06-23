@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CheapRulerIOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ObjectMapper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,22 +42,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>25400EAEB96F7CEFF3FEB214925585E8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>2F4A81E77DCD7E11AEF436454F1E6CE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47E92CFD768F2D5628EF9C3B78C2A7C5</key>
+		<key>688078D72EE64600576BFB3EEE085CB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B3057D5C67EA4A057B353F7A26264879</key>
+		<key>865C39128A0F9E593B7CD5277C3A6A42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8B912843A74E1099034F71288272B4C2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9FA50117A5E8EDE0E9EE8B696957F71A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

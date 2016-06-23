@@ -10,19 +10,26 @@ import RealmSwift
 
 extension Realm {
     
-    func filter<ParentType: Object>(parentType parentType: ParentType.Type, subclasses: [ParentType.Type], predicate: NSPredicate?) -> [ParentType] {
+    func filter<ParentType: Object>(parentType parentType: ParentType.Type, subclasses: [ParentType.Type], predicate: AnyObject?) -> [ParentType] {
         
-        if (predicate == nil) {
+        if predicate is String {
+            return ([parentType] + subclasses).flatMap { classType in
+                return Array(self.objects(classType).filter(predicate as! String))
+            }
+        }
+        else if predicate is NSPredicate {
+            return ([parentType] + subclasses).flatMap { classType in
+                return Array(self.objects(classType).filter(predicate as! NSPredicate))
+            }
+        } else {
+            
             return ([parentType] + subclasses).flatMap { classType in
                 return Array(self.objects(classType))
             }
-
-        } else {
-            return ([parentType] + subclasses).flatMap { classType in
-                return Array(self.objects(classType).filter(predicate!))
-            }
         }
     }
+    
+    
     
     
 }

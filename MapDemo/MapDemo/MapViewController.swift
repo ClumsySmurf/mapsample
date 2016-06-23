@@ -10,6 +10,8 @@ import UIKit
 import Mapbox
 import ObjectMapper
 import RealmSwift
+import MapKit
+
     
 class MapViewController: UIViewController, MGLMapViewDelegate {
 
@@ -19,8 +21,18 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var findLocationBttn: UIButton!
     
     
+    lazy var mapOperations = [NSIndexPath:NSOperation]()
+    lazy var mapOperationQueue:NSOperationQueue = {
+        var queue = NSOperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+    
+    
     var jsonData:AnyObject? = nil
     
+    
+    /* Used for demo but we really don't use this object */
     var annotationResults:Array<MGLAnnotation>?
     
     override func viewDidLoad() {
@@ -200,8 +212,40 @@ extension MapViewController {
         return nil
 
     }
+    
+    
+    
+    func mapView(mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
         
+        if let region:MGLCoordinateBounds? = mapView.visibleCoordinateBounds {
+        
+            /*! Cancel any current update operations */
+            mapOperationQueue.cancelAllOperations()
+            
+        
+            var idList = [String]()
+            
+            if self.mapView.annotations != nil {
+                
+                idList = IDSForAnnotationList(self.mapView.annotations!);
 
+            } else {
+                print("No annotations to load")
+            }
+
+            
+            let operation = NSBlockOperation(block: { 
+                self.updateAnnotationsAroundUser(region!, center: mapView.centerCoordinate, currentIDS: idList)
+            })
+            
+            mapOperationQueue.addOperation(operation)
+            
+        }
+        
+    
+    }
     
 }
+
+
 

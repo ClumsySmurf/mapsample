@@ -1,0 +1,6 @@
+framework module CheapRulerIOS {
+  umbrella header "CheapRulerIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

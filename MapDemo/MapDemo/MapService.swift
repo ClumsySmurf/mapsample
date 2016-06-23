@@ -12,6 +12,7 @@ import Foundation
 class MapService: NSObject {
     
     
+    /* Load default json file to fill in some annotations */
     class func getAnnotations() -> AnyObject? {
         
         guard let path = NSBundle.mainBundle().pathForResource("data", ofType: "json")

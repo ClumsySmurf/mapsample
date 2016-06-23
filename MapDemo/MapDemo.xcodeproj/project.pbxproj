@@ -10,6 +10,7 @@
 		B604D6961D17179300659691 /* BaseAnnotationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604D6951D17179300659691 /* BaseAnnotationModel.swift */; };
 		B604D6981D1725A900659691 /* ImageAnnotationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604D6971D1725A900659691 /* ImageAnnotationModel.swift */; };
 		B604D6A01D174E1400659691 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B604D69F1D174E1400659691 /* MapService.swift */; };
+		B6219FC01D1A4CB100198C6D /* MapOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6219FBF1D1A4CB100198C6D /* MapOperation.swift */; };
 		B6753E8C1D15C52D00C7FD29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6753E8B1D15C52D00C7FD29 /* AppDelegate.swift */; };
 		B6753E8E1D15C52D00C7FD29 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6753E8D1D15C52D00C7FD29 /* MapViewController.swift */; };
 		B6753E911D15C52D00C7FD29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6753E8F1D15C52D00C7FD29 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		B604D6951D17179300659691 /* BaseAnnotationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseAnnotationModel.swift; sourceTree = "<group>"; };
 		B604D6971D1725A900659691 /* ImageAnnotationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageAnnotationModel.swift; sourceTree = "<group>"; };
 		B604D69F1D174E1400659691 /* MapService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		B6219FBF1D1A4CB100198C6D /* MapOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapOperation.swift; sourceTree = "<group>"; };
 		B6753E881D15C52C00C7FD29 /* MapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6753E8B1D15C52D00C7FD29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6753E8D1D15C52D00C7FD29 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				B6753E8D1D15C52D00C7FD29 /* MapViewController.swift */,
+				B6219FBF1D1A4CB100198C6D /* MapOperation.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6753E8E1D15C52D00C7FD29 /* MapViewController.swift in Sources */,
+				B6219FC01D1A4CB100198C6D /* MapOperation.swift in Sources */,
 				B604D6981D1725A900659691 /* ImageAnnotationModel.swift in Sources */,
 				B604D6961D17179300659691 /* BaseAnnotationModel.swift in Sources */,
 				B6753E8C1D15C52D00C7FD29 /* AppDelegate.swift in Sources */,
